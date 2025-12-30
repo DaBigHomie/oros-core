@@ -1,75 +1,156 @@
-Oros: The Creative Economy Platform
+# Oros: The Creative Economy Platform
+
+> A high-performance Creative Economy platform bridging influencers, businesses, and supporters through hashtag-based matching and a verified commission-based marketplace.
+
+[![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)]()
+[![Phase](https://img.shields.io/badge/Phase-MVP%20Sprint-blue)]()
+[![Target Launch](https://img.shields.io/badge/Launch-Q1%202026-orange)]()
+
+---
+
+## Overview
 
 Oros is a multi-sided marketplace designed to revolutionize the creator economy through cultural alignment and performance-based marketing. By leveraging a unique three-sided model, Oros creates a symbiotic ecosystem where creators monetize influence, businesses scale with zero risk, and supporters share in the revenue.
 
-🚀 The 36-Hour NYE Sprint
+**Target Market:** $750 Billion annual creator and influence industry
 
-This repository represents a professional agency-led "Blitz" build. The core functional MVP was architected and deployed in a 36-hour window, targeting a hard production deadline of January 1, 2026, @ 12:00 AM.
+---
 
-💎 Core Pillars
+## 🚀 The MVP Sprint
 
-Creators: Global monetization via "Tinder-style" hashtag matching and video-centric talent profiles.
+This repository represents a professional agency-led build targeting a production-ready MVP for Q1 2026. The development follows a structured 14-day sprint methodology broken into focused delivery blocks.
 
-Businesses: Risk-free marketing environment; pay only for performance (clicks/sales).
+---
 
-Supporters: Engagement-based micro-commissions for driving traffic and social sharing.
+## 💎 Core Pillars
 
-🛠️ Key Features
+| Pillar | Value Proposition |
+|--------|-------------------|
+| **Creators** | Global monetization via "Tinder-style" hashtag matching and video-centric talent profiles |
+| **Businesses** | Risk-free marketing environment; pay only for performance (clicks/sales) |
+| **Supporters** | Engagement-based micro-commissions for driving traffic and social sharing |
 
-Hashtag Matching Engine: Dual-sided keyword-weighted alignment logic.
+---
 
-PWA Architecture: High-performance Progressive Web App for cross-platform, app-store-free installation.
+## 🛠️ Key Features
 
-Transaction Logic: Automated 3% platform fee deduction and integrated Stripe/PayPal payout modules.
+- **Hashtag Matching Engine:** Dual-sided keyword-weighted alignment logic
+- **PWA Architecture:** High-performance Progressive Web App for cross-platform, app-store-free installation
+- **Transaction Logic:** Automated 3% platform fee deduction and integrated Stripe Connect payout modules
+- **Gamification (Evolution Loops):** Psychological progress tracking for tier upgrades (Free → Pro → Series)
+- **Oros OS (Alpha):** Initial framework for enterprise Revenue Operations and sales leakage optimization
 
-Gamification (Evolution Loops): Psychological progress tracking for tier upgrades (Free → Pro → Series).
+---
 
-Oros OS (Alpha): Initial framework for enterprise Revenue Operations and sales leakage optimization.
+## 💻 Tech Stack
 
-💻 Tech Stack
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | Next.js 14 (App Router) + Tailwind CSS |
+| **PWA** | Service Workers + Web App Manifest |
+| **Authentication** | Supabase Auth (Google OAuth 2.0 + 2FA) |
+| **Database** | Supabase (PostgreSQL) with Row Level Security |
+| **Payments** | Stripe Connect + PayPal |
+| **Video Hosting** | Mux / Cloudflare Stream |
+| **Infrastructure** | Vercel + Cloudflare (Security & CDN) |
 
-Frontend: PWA (Mobile-First Architecture)
+---
 
-Backend: Serverless-capable Infrastructure
+## 📂 Repository Structure
 
-Identity: Google OAuth 2.0 / MFA
+```
+oros-core/
+├── docs/
+│   ├── 01-executive-summary.md
+│   ├── 02-product-requirements.md
+│   ├── 03-launch-roadmap.md
+│   ├── 04-sitemap.md
+│   ├── 05-implementation-steps.md
+│   ├── 06-cost-validation.md
+│   └── 07-technical-stack.md
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   └── types/
+├── public/
+│   ├── icons/
+│   └── manifest.json
+├── .env.example
+├── next.config.js
+├── tailwind.config.ts
+└── README.md
+```
 
-Payments: Stripe / PayPal API
+---
 
-Infrastructure: Cloudflare Perimeter Security & SSL Termination
+## 📄 Documentation
 
-📂 Repository Structure
+| Document | Description |
+|----------|-------------|
+| [Executive Summary](docs/01-executive-summary.md) | Mission, market opportunity, ecosystem overview |
+| [Product Requirements](docs/02-product-requirements.md) | Functional & technical requirements (PRD) |
+| [Launch Roadmap](docs/03-launch-roadmap.md) | Sprint timeline and milestones |
+| [Platform Sitemap](docs/04-sitemap.md) | Navigation architecture and routes |
+| [Implementation Steps](docs/05-implementation-steps.md) | Execution roadmap and next actions |
+| [Cost Validation](docs/06-cost-validation.md) | Budget breakdown by phase |
+| [Technical Stack](docs/07-technical-stack.md) | Recommended technologies and architecture |
 
-/docs: Project Brief, PRD, and Phased Roadmap.
+---
 
-/src: Core PWA source code.
+## 🚦 Getting Started
 
-/assets: Brand assets and video portfolio framework.
+```bash
+# Clone the repo
+git clone https://github.com/dameluthas/oros-core.git
+cd oros-core
 
-🚦 Getting Started
+# Install dependencies
+npm install
 
-Clone the repo: git clone https://github.com/dameluthas/oros-core.git
+# Configure environment
+cp .env.example .env.local
 
-Install dependencies: npm install
+# Run development server
+npm run dev
+```
 
-Configure environment: Set up .env with Cloudflare and Stripe keys.
+---
 
-Run Dev: npm run dev
+## 🔐 Environment Variables
 
-📄 Documentation
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
 
-Detailed documentation is available in the /docs directory:
+# Stripe
+STRIPE_SECRET_KEY=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_WEBHOOK_SECRET=
 
-Sitemap
+# App
+NEXT_PUBLIC_APP_URL=
+```
 
-Project Brief
+---
 
-Product Requirements (PRD)
+## Project Team
 
-Launch Roadmap
+- **Phoenix** - Founder
+- **Dame Luthas** - Technical Lead (DAMIEUS Technology Solutions)
 
-Author: Dame Luthas
+---
 
-Status: Confidential / Active Sprint
+## Confidentiality
 
-Copyright: © 2025 Oros. All Rights Reserved.
+> ⚠️ **CONFIDENTIAL:** This repository contains proprietary business information protected under NDA. Unauthorized distribution is prohibited.
+
+---
+
+**Author:** Dame Luthas  
+**Status:** Confidential / Active Sprint  
+**Copyright:** © 2025 Oros. All Rights Reserved.
+
+*Last Updated: December 30, 2025*

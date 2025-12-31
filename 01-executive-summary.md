@@ -1,161 +1,266 @@
-# Project Brief & Executive Summary: Oros
+# Executive Summary: OROS™
 
-**Project Name:** Oros  
-**Document:** Executive Summary & Project Brief  
+**Document:** Executive Summary & Product Overview  
 **Date:** December 30, 2025  
-**Version:** 1.1  
+**Version:** 2.0  
 **Author:** Dame Luthas  
-**Status:** Confidential / Strategic
+**Status:** Confirmed
 
 ---
 
-## 1. Executive Summary
+## 1. What OROS™ Is
 
-Oros is a multi-sided marketplace designed to revolutionize the creator economy. Inspired by the disruptive success of platforms like Uber and Airbnb, Oros creates a symbiotic ecosystem where micro-influencers can monetize their influence, businesses can scale through performance-based marketing, and supporters are rewarded for their engagement. The platform aims to capture 1% of the $750 billion annual creator industry, positioning itself as a billion-dollar "cultural avatar."
+**OROS™** is a performance-based financial platform that converts attention, influence, and collaboration into measurable, attributable, and payable economic activity.
+
+It is **not**:
+- A traditional social network
+- A content hosting platform
+- An influencer marketplace
+
+**OROS™ is infrastructure** — comparable to how:
+- Uber monetized transportation capacity
+- Airbnb monetized underutilized space
+- Shopify monetized commerce infrastructure
+
+**OROS™ monetizes human attention and coordinated action.**
 
 ---
 
-## 2. Mission Statement
+## 2. The Problem OROS™ Solves
 
-To build a global "Creative Economy" platform that bridges the gap between influencers, businesses, and their supporters through a performance-based marketplace.
+### For Creators
+- Income is unpredictable
+- Monetization is fragmented
+- Algorithms control visibility
+- Platforms extract high fees
+- Attribution is unclear
+
+### For Businesses
+- Paid ads are inefficient
+- Influencer marketing is opaque
+- Agencies are expensive
+- ROI is difficult to measure
+- Scaling globally is complex
+
+### For Supporters
+- Attention creates value but earns nothing
+- Discovery happens without compensation
+- Participation lacks upside
 
 ---
 
-## 3. Market Opportunity
+## 3. The OROS™ Solution
+
+OROS™ creates a marketplace where **actions are priced, not just content.**
+
+Every economically relevant action is:
+1. **Tracked**
+2. **Attributed**
+3. **Verified**
+4. **Escrow-funded**
+5. **Paid automatically**
+
+Actions include:
+- Clicks
+- Conversions
+- Sales
+- Shares
+- Boosts (Phase 2)
+- Tips (Phase 2)
+- Live purchases (Phase 3)
+
+**This turns influence into a financial asset class.**
+
+---
+
+## 4. Platform Structure
+
+OROS™ operates as a multi-sided marketplace:
+
+| Side | Role |
+|------|------|
+| **Creators** | Execute campaigns, host communities, monetize attention |
+| **Supporters** | Amplify, participate, tip, earn |
+| **Businesses** | Fund performance-based campaigns |
+| **OROS™** | Tracks, verifies, escrows, distributes, and takes fees |
+
+**The platform sits between money and action, not between content and users.**
+
+---
+
+## 5. Core System Architecture
+
+OROS™ consists of 7 core subsystems:
+
+| # | Subsystem | MVP Status |
+|---|-----------|------------|
+| 1 | Identity & Role System | ✅ MVP |
+| 2 | Membership & Permissions Engine | ⏳ Phase 2 |
+| 3 | Campaign & Task Engine | ✅ MVP |
+| 4 | Attribution & Tracking Engine | ✅ MVP |
+| 5 | Wallet, Ledger & Payout Engine | ✅ MVP |
+| 6 | Community & Tipping Engine | ⏳ Phase 2 |
+| 7 | Commerce & Live Shopping | ⏳ Phase 3 |
+
+Each subsystem is loosely coupled, API-driven, and independently scalable.
+
+---
+
+## 6. Identity, Roles & Permissions
+
+### Roles (Non-Exclusive)
+A single user may hold multiple roles:
+- **creator**
+- **supporter**
+- **business**
+- **admin**
+
+### Key Rules
+- **Roles** determine what you *are*
+- **Membership** determines what you can *monetize* (Phase 2)
+
+---
+
+## 7. MVP Membership Model (Simplified)
+
+For MVP launch, all users have equal access to core features:
+
+| User Type | MVP Access |
+|-----------|------------|
+| **Creator** | Accept campaigns, earn performance payouts, receive tips |
+| **Supporter** | Basic participation, share-to-earn (Phase 2) |
+| **Business** | Fund campaigns, pay for verified results |
+
+### Phase 2 Tiers (Post-Launch)
+
+**Creator Tiers:**
+| Tier | Price | Features |
+|------|-------|----------|
+| Free | $0 | Accept campaigns, earn payouts, receive tips |
+| Oros+ | $19.99/mo | Set min tip, lock content, host community perks |
+| Oros Pro | $99/mo | Live shopping, priority ranking, analytics |
+
+**Supporter Tiers:**
+| Tier | Price | Features |
+|------|-------|----------|
+| Free | $0 | Join communities, tip, share-to-earn |
+| Supporter Plus | TBD | Reward multipliers, faster withdrawals |
+
+---
+
+## 8. Money Flow & Economic Safety
+
+### Core Principle
+> **OROS™ never pays money it does not already hold.**
+
+### Money Flow
+```
+Money enters via:
+├── Campaign funding (Business → Escrow)
+├── Tips (Supporter → Creator) [Phase 2]
+└── Live commerce (Buyer → Creator) [Phase 3]
+
+Funds are:
+1. Escrowed
+2. Attributed to verified actions
+3. Platform fees deducted
+4. Credited to wallets
+5. Withdrawn post-verification
+```
+
+All activity is logged in an **immutable ledger**.
+
+---
+
+## 9. Fee Structure (Confirmed)
+
+| Revenue Source | Platform Fee |
+|----------------|--------------|
+| Campaign payouts | ~20% |
+| Tips | 10-15% |
+| Live shopping | 15-20% |
+| Supporter rewards | ~20% |
+| OrosCard transactions | 3% |
+| Subscriptions | 100% platform |
+
+These rates:
+- Encourage early adoption
+- Reduce perceived risk
+- Increase liquidity
+- Are below industry averages
+
+---
+
+## 10. Why Users Stay (Economic Loops)
+
+### Creators
+- Campaigns → tips → live commerce → subscriptions
+- Income stacks in one place
+- Earnings compound
+
+### Supporters
+- Participation earns money (Phase 2)
+- Tips unlock status and access
+- Multipliers increase upside
+
+### Businesses
+- Predictable ROI
+- Infinite scale
+- Performance-only spend
+
+**This is economic addiction, not content addiction.**
+
+---
+
+## 11. Technical Differentiation
+
+OROS™ is defensible because:
+- Attribution is first-class
+- Ledger is immutable
+- Money is escrow-based
+- Permissions are tier-controlled
+- Events are auditable
+
+**Competitors monetize outputs. OROS™ monetizes process.**
+
+---
+
+## 12. Scale Logic
+
+OROS™ expands into:
+- Payments
+- Banking (OrosCard)
+- Commerce
+- Financial products
+
+**Once embedded, OROS™ becomes infrastructure — not optional software.**
+
+---
+
+## 13. Market Opportunity
 
 | Metric | Value |
 |--------|-------|
-| **Total Addressable Market (TAM)** | $750 Billion annual creator and influence industry |
-| **Target Capture** | 1% - 5% of nationwide business market |
-| **Global Business Pool** | 370 million businesses worldwide |
-
-### Growth Model Reference
-
-> *OnlyFans founder borrowed £10,000 (~$13,000 USD). Five years later, achieved multi-billion dollar exit.*
-
-Oros follows a similar capital-efficient growth trajectory with a clear path to Series A.
+| **Total Addressable Market** | $750 Billion annual creator economy |
+| **Target Capture** | 1% - 5% of market |
+| **Global Business Pool** | 370 million businesses |
+| **Valuation Thesis** | $10B - $20B platform potential |
 
 ---
 
-## 4. The Three-Sided Ecosystem
+## 14. Final Thesis
 
-Oros operates on a unique three-sided model:
+**OROS™ turns attention into a financial market.**
 
-### 4.1 Creators (Influencers)
+It is:
+- Fairer than existing platforms
+- Safer for businesses
+- More profitable for creators
+- More inclusive for supporters
 
-- Access to global monetization opportunities without traditional agency gatekeepers
-- Matched with businesses based on "cultural alignment" and hashtags
-- Video-centric profiles for enhanced talent discovery
-- Performance-based income from Day 1
-
-### 4.2 Businesses
-
-- Risk-free marketing environment
-- Pay only for verified results (clicks or sales)
-- No upfront endorsement fees
-- Access to niche-aligned creator talent pool
-
-### 4.3 Supporters
-
-- Engagement-based micro-commissions
-- Rewards for sharing content and driving traffic
-- Self-sustaining viral ecosystem participation
+Most importantly:
+> **It monetizes behavior people already perform — and pays them for it.**
 
 ---
 
-## 5. Platform Evolution Roadmap
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      OROS EVOLUTION PATH                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  PHASE 1              PHASE 2              PHASE 3              │
-│  ─────────            ─────────            ─────────            │
-│  Creator Economy  →   Fintech Card    →   Enterprise OS        │
-│  (MVP Launch)         (100K+ Users)       (Oros OS)             │
-│                                                                 │
-│  • Matching Engine    • White-label       • RevOps System       │
-│  • Transactions       • SoFi Partnership  • Sales Optimization  │
-│  • Gamification       • Creator Cards     • Fortune 500         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 6. Core Value Propositions
-
-| Stakeholder | Problem Solved | Value Delivered |
-|-------------|----------------|-----------------|
-| **Creators** | No monetization without large followings | Performance-based income from Day 1 |
-| **Businesses** | High upfront marketing costs, uncertain ROI | Pay only for verified clicks/sales |
-| **Supporters** | No reward for organic promotion | Micro-commissions for sharing |
-
----
-
-## 7. Competitive Differentiation
-
-Unlike traditional influencer platforms that require upfront payments, Oros operates on pure performance metrics:
-
-- **Zero Risk for Businesses:** Pay only when making money
-- **Democratized Access for Creators:** No follower minimums required
-- **Viral Growth Mechanism:** Supporters incentivized to share
-
----
-
-## 8. Revenue Model Overview
-
-| Stream | Description | Rate |
-|--------|-------------|------|
-| **Transaction Fees** | Platform cut on all payouts | 3% |
-| **Pro Subscription** | Enhanced features, unlimited matches | $20/mo |
-| **Series Subscription** | Premium brand matching, verified badge | $100/mo |
-| **Training Services** | Creator monetization courses | Variable |
-
----
-
-## 9. Technical Infrastructure Preview
-
-### MVP Delivery Format
-- **Progressive Web App (PWA):** Cross-platform, app-store-free installation
-- **Mobile-First Design:** Optimized for creator workflows
-
-### Scale Infrastructure (Phase 2+)
-- **Oros OS:** Automated Revenue Operations system
-- **Fintech Integration:** White-labeled payment cards via SoFi
-- **Enterprise Security:** SOC 2 ready architecture
-
----
-
-## 10. Strategic Milestones
-
-| Milestone | Target | Outcome |
-|-----------|--------|---------|
-| **MVP Launch** | Q1 2026 | Functional matching + transactions |
-| **100 Active Creators** | Q1 2026 | Proof of concept validation |
-| **Series A Ready** | Q2 2026 | Real data for investor deck |
-| **100K Users** | Q4 2026 | Trigger fintech card launch |
-| **Oros OS Beta** | 2027 | Enterprise market entry |
-
----
-
-## 11. Investment Thesis
-
-**Why Oros Will Win:**
-
-1. **Performance-Based Model:** Eliminates risk for businesses, drives adoption
-2. **Three-Sided Viral Loop:** Supporters create organic growth engine
-3. **Cultural Avatar Positioning:** First-mover in democratized creator monetization
-4. **Scalable Tech Stack:** PWA architecture enables rapid global expansion
-5. **Clear Revenue Path:** 3% transaction fees + tiered subscriptions
-
----
-
-## 12. Confidentiality Note
-
-This project is governed by strict NDAs as discussed by the primary stakeholders. All documentation, code, and strategic materials are proprietary to Oros.
-
----
-
-**Next Document:** [Product Requirements (PRD)](02-product-requirements.md)
+**Next Document:** [Product Requirements](02-product-requirements.md)

@@ -1,7 +1,7 @@
-# Product Requirements Document (PRD): Oros Platform
+# Product Requirements Document (PRD): OROS™ Platform
 
-**Version:** 1.1  
-**Status:** Draft  
+**Version:** 2.0  
+**Status:** Confirmed  
 **Owner:** Phoenix (Founder) / Dame Luthas (Technical Lead)  
 **Date:** December 30, 2025
 
@@ -9,290 +9,259 @@
 
 ## 1. Project Overview
 
-Oros is a performance-based "Creative Economy" platform designed to facilitate transactions between three distinct user groups: Creators, Businesses, and Supporters. The platform solves the problem of unverified marketing spend and influencer monetization through a verified, commission-based ecosystem.
+OROS™ is a performance-based financial operating system that tracks attention, promotion, and conversion — then attributes value and pays users automatically based on verified outcomes.
+
+**Core Principle:** No verified event = no payout.
 
 ---
 
-## 2. Target Audience
+## 2. MVP Scope Definition
 
-| User Type | Description | Primary Need |
-|-----------|-------------|--------------|
-| **Creators** | Micro-influencers and talent seeking monetization | Performance-based income opportunities |
-| **Businesses** | Companies seeking risk-free marketing | High ROI with cultural alignment |
-| **Supporters** | Users driving traffic through engagement | Micro-commissions for sharing |
+### ✅ Included in MVP (Q1 2026)
+
+| Feature | Priority |
+|---------|----------|
+| User authentication (multi-role) | P0 |
+| Creator profiles | P0 |
+| Business profiles | P0 |
+| Campaign creation & management | P0 |
+| Hashtag-based matching engine | P0 |
+| Wallet system (escrow-first) | P0 |
+| Immutable ledger | P0 |
+| Attribution & tracking | P0 |
+| Payout processing | P0 |
+| Basic analytics | P1 |
+
+### ⏳ Deferred to Phase 2
+
+| Feature | Target |
+|---------|--------|
+| Communities | Feb 2026 |
+| Tipping system | Feb 2026 |
+| Content locking | Feb 2026 |
+| Supporter earnings (boost/share) | Feb 2026 |
+| Membership tiers (Oros+/Pro) | Feb 2026 |
+| Reward multipliers | Feb 2026 |
+
+### ⏳ Deferred to Phase 3+
+
+| Feature | Target |
+|---------|--------|
+| Live shopping | Q2 2026 |
+| OrosCard | Q3 2026 |
+| Prediction markets | Q4 2026 |
+| AI optimization | 2027 |
 
 ---
 
-## 3. Functional Requirements
+## 3. User Roles & Permissions
 
-### 3.1 User Management & Authentication
+### Multi-Role System
+
+Users can hold **multiple roles simultaneously**:
+
+| Role | Description |
+|------|-------------|
+| `creator` | Executes campaigns, earns payouts |
+| `supporter` | Participates, earns rewards (Phase 2) |
+| `business` | Funds campaigns, pays for results |
+| `admin` | Platform administration |
+
+### MVP Permissions
+
+| Action | Creator | Supporter | Business |
+|--------|---------|-----------|----------|
+| Create profile | ✅ | ✅ | ✅ |
+| Accept campaigns | ✅ | ❌ | ❌ |
+| Create campaigns | ❌ | ❌ | ✅ |
+| Fund campaigns | ❌ | ❌ | ✅ |
+| Earn from campaigns | ✅ | ⏳ Phase 2 | ❌ |
+| Receive tips | ✅ | ❌ | ❌ |
+| Send tips | ✅ | ✅ | ✅ |
+| Withdraw funds | ✅ | ⏳ Phase 2 | ❌ |
+
+---
+
+## 4. Functional Requirements
+
+### 4.1 Authentication & Identity
 
 | Requirement | Priority | Status |
 |-------------|----------|--------|
-| Multi-Platform OAuth (Google, Facebook, Microsoft) | P0 | 🔲 Pending |
-| Email/Password fallback with verification | P0 | 🔲 Pending |
-| Dual-Factor Authentication (2FA) for financial operations | P0 | 🔲 Pending |
-| Distinct onboarding flows (Creator vs Business) | P0 | 🔲 Pending |
-| Profile type selection during signup | P1 | 🔲 Pending |
+| Email/password authentication | P0 | 🔲 |
+| Google OAuth | P0 | 🔲 |
+| Role selection during signup | P0 | 🔲 |
+| Multi-role assignment | P0 | 🔲 |
+| 2FA for financial operations | P1 | 🔲 |
+| KYC status tracking | P1 | 🔲 |
 
-**Implementation Notes:**
-- Use Supabase Auth or Clerk for out-of-box OAuth + 2FA
-- Session management with secure HTTP-only cookies
-- Rate limiting on auth endpoints (10 attempts/minute)
-
----
-
-### 3.2 Core Feature: Matching Engine
+### 4.2 Creator Features
 
 | Requirement | Priority | Status |
 |-------------|----------|--------|
-| Hashtag-based matching algorithm | P0 | 🔲 Pending |
-| Weighted keyword scoring for relevance | P1 | 🔲 Pending |
-| Dual-sided discovery (Creators ↔ Businesses) | P0 | 🔲 Pending |
-| "Tinder-style" match notifications | P1 | 🔲 Pending |
-| Search with filters (industry, payout, location) | P1 | 🔲 Pending |
+| Profile creation (bio, image, username) | P0 | 🔲 |
+| Hashtag/niche selection | P0 | 🔲 |
+| View matched campaigns | P0 | 🔲 |
+| Accept/reject campaigns | P0 | 🔲 |
+| View earnings dashboard | P0 | 🔲 |
+| Wallet balance (available + pending) | P0 | 🔲 |
+| Transaction history | P1 | 🔲 |
+| Withdrawal requests | P0 | 🔲 |
 
-**Algorithm Logic:**
+### 4.3 Business Features
+
+| Requirement | Priority | Status |
+|-------------|----------|--------|
+| Business profile (company, website, industry) | P0 | 🔲 |
+| Campaign creation wizard | P0 | 🔲 |
+| Campaign funding (escrow) | P0 | 🔲 |
+| Set campaign objective (click/conversion/sale) | P0 | 🔲 |
+| Set payout per action | P0 | 🔲 |
+| Set total budget | P0 | 🔲 |
+| View matched creators | P0 | 🔲 |
+| Accept/reject creator applications | P0 | 🔲 |
+| Campaign performance dashboard | P1 | 🔲 |
+| Budget tracking (remaining/spent) | P0 | 🔲 |
+
+### 4.4 Matching Engine
+
+| Requirement | Priority | Status |
+|-------------|----------|--------|
+| Hashtag-based matching algorithm | P0 | 🔲 |
+| Creator → Campaign discovery | P0 | 🔲 |
+| Business → Creator search | P0 | 🔲 |
+| Match scoring (% relevance) | P1 | 🔲 |
+| Filter by industry/payout/objective | P1 | 🔲 |
+
+### 4.5 Campaign Lifecycle
+
 ```
-Match Score = (Σ matched_hashtag_weights) / total_campaign_hashtags
-```
-
-- Creators select up to 10 niche hashtags
-- Businesses tag campaigns with relevant keywords
-- System calculates intersection and weighted relevance
-- Matches above threshold (e.g., 0.6) trigger notifications
-
----
-
-### 3.3 Creator Features
-
-| Requirement | Priority | Status |
-|-------------|----------|--------|
-| Video profile uploads (30-60 sec intros) | P0 | 🔲 Pending |
-| Niche hashtag selection (up to 10 tags) | P0 | 🔲 Pending |
-| Real-time earnings dashboard | P0 | 🔲 Pending |
-| Campaign acceptance/rejection workflow | P0 | 🔲 Pending |
-| Withdrawal portal (Stripe/PayPal) | P0 | 🔲 Pending |
-| Transaction history with filtering | P1 | 🔲 Pending |
-| "Evolution" progress tracking (tier system) | P1 | 🔲 Pending |
-
-**Dashboard Components:**
-- Current Balance (available / pending)
-- Active Campaigns list with status
-- Match suggestions feed
-- Messages/notifications center
-- Profile completion percentage
-
----
-
-### 3.4 Business Features
-
-| Requirement | Priority | Status |
-|-------------|----------|--------|
-| Campaign creation wizard | P0 | 🔲 Pending |
-| Commission structure definition (CPC/CPS/Hybrid) | P0 | 🔲 Pending |
-| Performance analytics dashboard | P0 | 🔲 Pending |
-| Talent search with filters | P0 | 🔲 Pending |
-| Budget management and spend tracking | P1 | 🔲 Pending |
-| Favorites/saved creators list | P2 | 🔲 Pending |
-
-**Campaign Creation Fields:**
-- Campaign name and description
-- Hashtag/keyword tags (for matching)
-- Commission type: CPC (cost per click) / CPS (cost per sale) / Hybrid
-- Commission rate ($ or %)
-- Budget cap (optional)
-- Duration (start/end dates)
-- Media assets (images, guidelines)
-
----
-
-### 3.5 Supporter Features
-
-| Requirement | Priority | Status |
-|-------------|----------|--------|
-| Unique referral link generation | P0 | 🔲 Pending |
-| Click/conversion tracking | P0 | 🔲 Pending |
-| Micro-commission balance and history | P0 | 🔲 Pending |
-| Social sharing integration | P1 | 🔲 Pending |
-| Withdrawal threshold ($10 minimum) | P1 | 🔲 Pending |
-
-**Tracking Mechanism:**
-- 30-day cookie attribution window
-- UTM parameter tracking for link clicks
-- Conversion webhooks from business sites
-- Real-time balance updates
-
----
-
-### 3.6 Financial & Transactional Logic
-
-| Requirement | Priority | Status |
-|-------------|----------|--------|
-| Stripe Connect integration (split payouts) | P0 | 🔲 Pending |
-| Automated 3% platform fee deduction | P0 | 🔲 Pending |
-| Click attribution tracking | P0 | 🔲 Pending |
-| Sale conversion webhook handlers | P0 | 🔲 Pending |
-| Tiered subscription gating | P1 | 🔲 Pending |
-| PayPal fallback for payouts | P2 | 🔲 Pending |
-
-**Stripe Connect Flow:**
-```
-Business funds campaign → Escrow in Stripe
-    ↓
-Creator generates click/sale → Verified via webhook
-    ↓
-Payout triggered:
-  - Creator receives: 97% of commission
-  - Platform receives: 3% fee
-    ↓
-Transfer to Creator's connected Stripe account
+1. Business creates campaign
+2. Business funds campaign (escrow)
+3. Creators matched and notified
+4. Creators accept campaign
+5. Tracking links generated
+6. Events tracked & verified
+7. Payouts calculated (20% platform fee)
+8. Creator wallets credited
+9. Campaign completes when budget depleted or end date reached
 ```
 
----
-
-### 3.7 Gamification & Psychology
+### 4.6 Wallet & Ledger System
 
 | Requirement | Priority | Status |
 |-------------|----------|--------|
-| Milestone bonuses for campaign completion | P1 | 🔲 Pending |
-| "Evolution" tier progress visualization | P1 | 🔲 Pending |
-| Achievement badges | P2 | 🔲 Pending |
-| Time-limited bonus multipliers | P2 | 🔲 Pending |
-| Leaderboards (Phase 2) | P3 | 🔲 Pending |
+| Wallet created on signup | P0 | 🔲 |
+| Separate pending/available balances | P0 | 🔲 |
+| Immutable ledger entries | P0 | 🔲 |
+| Escrow on campaign funding | P0 | 🔲 |
+| Platform fee deduction before credit | P0 | 🔲 |
+| Pending → available after verification | P0 | 🔲 |
+| Withdrawal processing | P0 | 🔲 |
 
-**Evolution Tiers:**
-| Tier | Requirements | Benefits |
-|------|--------------|----------|
-| **Free** | Signup | 5 matches/day, basic profile |
-| **Pro** | $20/mo or 10 completed campaigns | Unlimited matches, analytics |
-| **Series** | $100/mo or 50 completed campaigns | Premium brands, verified badge, priority support |
+**Ledger Entry Types:**
+- `credit` — Money added to wallet
+- `debit` — Money removed from wallet
 
----
+**Source Types (MVP):**
+- `campaign` — Campaign payout
+- `withdrawal` — Funds withdrawn
+- `escrow` — Business funding campaign
 
-### 3.8 Communication System
+### 4.7 Attribution & Tracking
 
 | Requirement | Priority | Status |
 |-------------|----------|--------|
-| Real-time messaging between matched parties | P0 | 🔲 Pending |
-| Message encryption (E2E) | P1 | 🔲 Pending |
-| File/media sharing in chat | P2 | 🔲 Pending |
-| Email notifications for new messages | P1 | 🔲 Pending |
-| Push notifications (PWA) | P2 | 🔲 Pending |
+| Tracking link generation | P0 | 🔲 |
+| Click event capture | P0 | 🔲 |
+| Conversion event capture | P0 | 🔲 |
+| Sale event capture | P0 | 🔲 |
+| Event verification logic | P0 | 🔲 |
+| Attribution to creator | P0 | 🔲 |
+| Duplicate/fraud filtering | P1 | 🔲 |
 
----
+**Event Types:**
+- `click` — User clicked tracking link
+- `conversion` — User completed signup/action
+- `sale` — User completed purchase
 
-## 4. Technical Requirements
+### 4.8 Payout System
 
-### 4.1 Architecture
+| Requirement | Priority | Status |
+|-------------|----------|--------|
+| Calculate payout per verified event | P0 | 🔲 |
+| Deduct platform fee (20%) | P0 | 🔲 |
+| Credit creator wallet | P0 | 🔲 |
+| Debit campaign budget | P0 | 🔲 |
+| Stripe Connect payout | P0 | 🔲 |
 
-| Component | Specification |
-|-----------|---------------|
-| **Frontend** | Next.js 14 (App Router) with PWA manifest |
-| **Styling** | Tailwind CSS + shadcn/ui components |
-| **Database** | Supabase (PostgreSQL) with Row Level Security |
-| **Authentication** | Supabase Auth (OAuth 2.0 + 2FA) |
-| **Payments** | Stripe Connect (Express accounts) |
-| **Video Hosting** | Mux or Cloudflare Stream |
-| **CDN/Security** | Cloudflare (WAF, DDoS, SSL) |
-| **Hosting** | Vercel (Edge deployment) |
-
-### 4.2 PWA Requirements
-
-```json
-{
-  "name": "Oros",
-  "short_name": "Oros",
-  "description": "The Creative Economy Platform",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#FFD700"
-}
+**Payout Formula:**
 ```
-
-- Service worker for offline capability
-- "Add to Home Screen" prompt
-- App-like navigation (no browser chrome)
-- Push notification support
-
-### 4.3 External Integrations
-
-| Service | Purpose | Priority |
-|---------|---------|----------|
-| **Stripe Connect** | Multi-party payouts with fee splitting | P0 |
-| **Supabase** | Database + Auth + Realtime subscriptions | P0 |
-| **Mux** | Video upload and streaming | P1 |
-| **Cloudflare** | Security, CDN, DNS | P0 |
-| **PostHog** | Product analytics | P2 |
-| **Resend** | Transactional emails | P1 |
+creator_payout = event_value × (1 - platform_fee)
+creator_payout = $10 × 0.80 = $8.00 (Creator receives)
+platform_revenue = $10 × 0.20 = $2.00 (OROS™ receives)
+```
 
 ---
 
 ## 5. Non-Functional Requirements
 
-| Requirement | Target | Measurement |
-|-------------|--------|-------------|
-| **Page Load Time** | < 2 seconds | Core Web Vitals |
-| **Uptime** | 99.9% | Vercel + Supabase SLA |
-| **Mobile Lighthouse Score** | 90+ | PWA audit |
-| **Security** | SOC 2 ready | Penetration testing |
-| **Scalability** | 100K concurrent users | Load testing |
+| Requirement | Target |
+|-------------|--------|
+| Page load time | < 2 seconds |
+| Uptime | 99.9% |
+| Mobile Lighthouse score | 90+ |
+| Ledger immutability | Append-only, no updates/deletes |
+| Audit trail | Full event history |
 
 ---
 
-## 6. Success Metrics
+## 6. Success Metrics (MVP)
 
-### 6.1 Onboarding Metrics
+### Week 1-2 (Launch)
+| Metric | Target |
+|--------|--------|
+| Creator signups | 50 |
+| Business signups | 10 |
+| Campaigns created | 5 |
 
-| Metric | Target (30 days) |
-|--------|------------------|
-| Creator signups | 500 |
-| Business signups | 50 |
-| Profile completion rate | 70% |
+### Week 3-4
+| Metric | Target |
+|--------|--------|
+| Active matches | 25 |
+| Tracked events | 500 |
+| First payout processed | 1 |
 
-### 6.2 Engagement Metrics
-
-| Metric | Target (30 days) |
-|--------|------------------|
-| Matches created | 1,000 |
-| Messages sent | 5,000 |
-| Campaigns launched | 100 |
-
-### 6.3 Revenue Metrics
-
-| Metric | Target (30 days) |
-|--------|------------------|
-| Total GMV | $25,000 |
-| Platform revenue (3%) | $750 |
-| Pro subscriptions | 25 |
+### Month 1
+| Metric | Target |
+|--------|--------|
+| Total GMV | $5,000 |
+| Platform revenue (20%) | $1,000 |
+| Creator retention | 60% |
 
 ---
 
-## 7. Out of Scope (MVP)
+## 7. Open Questions (Resolved)
 
-The following features are explicitly excluded from MVP and planned for future phases:
-
-- Native iOS/Android apps
-- Advanced ML-based matching
-- White-label creator cards (SoFi)
-- Oros OS enterprise features
-- Multi-language support
-- Advanced analytics dashboards
-- API for third-party integrations
+| Question | Decision |
+|----------|----------|
+| Fee structure? | 20% campaigns, 10-15% tips, 3% card |
+| Can free creators receive tips? | ✅ Yes |
+| Communities in MVP? | ❌ Phase 2 |
+| Supporter earnings in MVP? | ❌ Phase 2 |
+| Timeline? | Q1 2026 launch |
 
 ---
 
-## 8. Open Questions
+## 8. Engineering Principles
 
-| Question | Owner | Status |
-|----------|-------|--------|
-| Minimum payout threshold for Creators? | Phoenix | 🔲 Pending |
-| Campaign approval workflow (auto vs manual)? | Phoenix | 🔲 Pending |
-| Dispute resolution process? | Phoenix | 🔲 Pending |
-| Content moderation policy? | Phoenix | 🔲 Pending |
-| KYC requirements for high-volume Creators? | Dame | 🔲 Pending |
+1. **No event = no payout**
+2. **Ledger is immutable**
+3. **Money always escrowed first**
+4. **Permissions controlled by role**
+5. **Everything must be auditable**
+6. **No verification = no payout**
 
 ---
 
-**Next Document:** [Launch Roadmap](03-launch-roadmap.md)
+**Next Document:** [Database Schema](03-database-schema.md)

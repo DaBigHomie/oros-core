@@ -94,7 +94,7 @@ export async function PATCH(
 
     // Update the course
     const updateData: any = { ...body };
-    if (body.status === 'published' && !course.published_at) {
+    if (body.status === 'published' && !(course as any).published_at) {
       updateData.published_at = new Date().toISOString();
     }
 

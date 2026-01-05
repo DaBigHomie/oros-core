@@ -1,0 +1,40 @@
+{
+  "name": "dj-jaytek-music-ui",
+  "version": "1.0.0",
+  "description": "UI component library for DJ-Jaytek-Music with cyber-aesthetic design",
+  "main": "components/ui/index.ts",
+  "types": "components/ui/index.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "ui-components",
+    "glassmorphism",
+    "cyber-aesthetic",
+    "dj",
+    "music"
+  ],
+  "author": "DJ Jaytek Music Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "next": "^14.0.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.3.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

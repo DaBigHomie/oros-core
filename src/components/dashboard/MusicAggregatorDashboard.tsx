@@ -3,8 +3,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  BarChart,
-  Bar,
   LineChart,
   Line,
   XAxis,

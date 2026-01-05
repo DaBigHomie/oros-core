@@ -5,11 +5,9 @@ const nextConfig = {
     domains: [
       'localhost',
       'supabase.co',
+      'images.unsplash.com',
       // Add other image domains as needed
     ],
-  },
-  experimental: {
-    serverActions: true,
   },
   env: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,

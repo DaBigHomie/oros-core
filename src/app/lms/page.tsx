@@ -82,10 +82,10 @@ export default function LMSLandingPage() {
   ];
 
   const stats = [
-    { icon: Users, label: 'Active Students', value: '10,000+', color: 'indigo' },
-    { icon: BookOpen, label: 'Courses Available', value: '150+', color: 'purple' },
-    { icon: Award, label: 'Expert Instructors', value: '50+', color: 'pink' },
-    { icon: TrendingUp, label: 'Success Rate', value: '94%', color: 'orange' },
+    { icon: Users, label: 'Active Students', value: '10,000+', colorClass: 'bg-gradient-to-br from-indigo-500 to-indigo-600' },
+    { icon: BookOpen, label: 'Courses Available', value: '150+', colorClass: 'bg-gradient-to-br from-purple-500 to-purple-600' },
+    { icon: Award, label: 'Expert Instructors', value: '50+', colorClass: 'bg-gradient-to-br from-pink-500 to-pink-600' },
+    { icon: TrendingUp, label: 'Success Rate', value: '94%', colorClass: 'bg-gradient-to-br from-orange-500 to-orange-600' },
   ];
 
   const containerVariants = {
@@ -182,7 +182,7 @@ export default function LMSLandingPage() {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg text-center"
                 >
-                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-${stat.color}-500 to-${stat.color}-600 mb-3`}>
+                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-3 ${stat.colorClass}`}>
                     <Icon className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white mb-1">

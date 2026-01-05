@@ -1,233 +1,219 @@
-# Oros-Core & DJ-Jaytek-Music UI Components
+# Oros - Creator Economy Platform
 
-This repository contains architectural documentation for the Oros platform and UI components for the DJ-Jaytek-Music project.
+A high-performance Creative Economy platform bridging influencers, businesses, and supporters through hashtag-based matching and a verified commission-based marketplace.
 
-## 📁 Repository Structure
+## 🚀 Features
+
+### NYE Splash Page
+- **Countdown Timer**: Real-time countdown to launch
+- **Lead Capture**: Email collection for early access
+- **Responsive Design**: Mobile-first, PWA-ready interface
+
+### Creator Dashboard
+- **Earnings Tracking**: Real-time revenue monitoring
+- **Hashtag Management**: Add/remove hashtags for better matching
+- **Video Management**: Upload and track video performance
+- **Campaign Matching**: Tinder-style swipe interface for campaign opportunities
+- **Analytics**: Views, earnings per video, performance metrics
+
+### Business Dashboard
+- **Campaign CRUD**: Create, read, update, delete campaigns
+- **Analytics**: Track matches, conversions, and ROI
+- **Creator Discovery**: Find creators based on hashtag matching
+- **Budget Management**: Set and track campaign budgets
+
+### Supporter Dashboard
+- **Referral System**: Unique referral links for earning
+- **Commission Tracking**: 3% micro-commissions on referrals
+- **Payment Management**: Track pending and paid commissions
+- **Social Sharing**: Easy sharing to multiple platforms
+
+### Matching Service
+- **Smart Algorithm**: Jaccard similarity-based hashtag matching
+- **Tinder-Style UI**: Swipe to accept/reject campaign matches
+- **Score-Based Ranking**: Matches sorted by relevance
+- **Bidirectional Matching**: Creators and businesses find each other
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16+ with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Authentication**: NextAuth.js with Google OAuth
+- **Payments**: Stripe (subscriptions + 3% platform fee)
+- **Deployment**: Vercel-ready
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/DaBigHomie/oros-core.git
+cd oros-core
+
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env
+
+# Configure your environment variables in .env:
+# - NEXTAUTH_SECRET
+# - GOOGLE_CLIENT_ID
+# - GOOGLE_CLIENT_SECRET
+# - STRIPE_SECRET_KEY
+# - NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+# - STRIPE_WEBHOOK_SECRET
+
+# Run development server
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 🔧 Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+NEXTAUTH_SECRET=your-secret-key-change-this-in-production
+NEXTAUTH_URL=http://localhost:3000
+
+# Google OAuth
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+
+# Stripe
+STRIPE_SECRET_KEY=your-stripe-secret-key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+```
+
+## 🗂️ Project Structure
 
 ```
 oros-core/
-├── components/ui/          # UI component library (NEW)
-│   ├── button.tsx         # Button component with cyber-aesthetic
-│   ├── card.tsx           # Card component with glassmorphism
-│   ├── input.tsx          # Input and Textarea components
-│   ├── index.ts           # Barrel exports
-│   └── README.md          # Component documentation
-│
-├── examples/              # Usage examples (NEW)
-│   └── component-examples.tsx
-│
-├── Documentation/         # Oros platform documentation
-│   ├── 01-executive-summary.md
-│   ├── 02-product-requirements.md
-│   ├── 03-database-schema.md
-│   ├── DJ-JAYTEK-MUSIC-README.md
-│   └── ... (more docs)
-│
-├── UI-COMPONENT-SUMMARY.md   # Component overview (NEW)
-├── DESIGN-GUIDE.md          # Visual design guide (NEW)
-├── package.json             # Dependencies (NEW)
-├── tsconfig.json           # TypeScript config (NEW)
-└── tailwind.config.ts      # Tailwind config (NEW)
+├── app/
+│   ├── api/
+│   │   ├── auth/[...nextauth]/    # NextAuth configuration
+│   │   └── stripe/                 # Stripe endpoints
+│   ├── creator/                    # Creator dashboard
+│   ├── business/                   # Business dashboard
+│   ├── shared/                     # Supporter/shared dashboard
+│   ├── layout.tsx                  # Root layout
+│   ├── page.tsx                    # NYE splash page
+│   └── globals.css                 # Global styles
+├── components/
+│   └── Navbar.tsx                  # Shared navigation
+├── lib/
+│   ├── matching.ts                 # Hashtag matching algorithm
+│   └── stripe.ts                   # Stripe utilities
+├── types/
+│   └── index.ts                    # TypeScript types
+└── public/
+    └── manifest.json               # PWA manifest
 ```
 
-## 🎨 UI Components (DJ-Jaytek-Music)
+## 🎯 Routing
 
-### What's New
+- `/` - NYE Splash Page (countdown + lead capture)
+- `/creator` - Creator Dashboard
+- `/business` - Business Dashboard
+- `/shared` - Supporter Dashboard
+- `/api/auth/[...nextauth]` - Authentication
+- `/api/stripe/*` - Payment processing
 
-Three production-ready UI components with cyber-aesthetic design:
+## 💳 Stripe Integration
 
-#### 1. **Button Component**
-- 6 variants: primary, secondary, success, danger, ghost, outline
-- 4 sizes: sm, md, lg, xl
-- Loading states, icon support, full accessibility
-- **173 lines of code**
+### Subscription Model
+- Businesses and creators can subscribe for premium features
+- Checkout sessions created via `/api/stripe/checkout`
 
-#### 2. **Card Component**
-- 6 variants with glassmorphism effects
-- Semantic sub-components (Header, Title, Description, Content, Footer)
-- Interactive mode with keyboard navigation
-- **222 lines of code**
+### 3% Platform Fee
+- All transactions include a 3% platform fee
+- Automatically calculated and split via Stripe Connect
+- Payment processing at `/api/stripe/payment`
 
-#### 3. **Input Component**
-- Text input and Textarea variants
-- Validation states with error messages
-- Icon support (left/right)
-- **333 lines of code**
+### Webhook Handling
+- Subscription events handled at `/api/stripe/webhook`
+- Supports: checkout completion, payment success, subscription updates
 
-### Design Features
+## 🔐 Authentication
 
-✨ **Glassmorphism**: Semi-transparent backgrounds with backdrop blur  
-🌟 **Neon Glows**: Animated border glows on hover/focus  
-♿ **Accessibility**: WCAG 2.1 AA compliant with full ARIA support  
-📱 **Responsive**: Mobile-first design approach  
-🎨 **Cyber-Aesthetic**: Cyan, purple, green, and red color palette  
+Uses NextAuth.js with Google OAuth provider:
+- Sign in with Google account
+- Session management
+- Protected routes (can be extended)
 
-### Quick Start
+## 🎨 UI/UX Design
+
+- **Mobile-First**: Responsive design optimized for all devices
+- **PWA-Ready**: Installable as a progressive web app
+- **App-Like Experience**: Smooth transitions, optimized performance
+- **Color Scheme**: Purple/pink gradient theme with professional gray tones
+- **Component-Based**: Modular, reusable components
+
+## 🔄 Matching Algorithm
+
+The hashtag matching service uses Jaccard similarity:
+
+```
+Match Score = (Intersection of hashtags) / (Union of hashtags) × 100
+```
+
+Features:
+- Case-insensitive matching
+- Configurable minimum match threshold (default: 30%)
+- Bidirectional matching (creators ↔ campaigns)
+- Sorted by relevance
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
 
 ```bash
-# Install dependencies
-npm install class-variance-authority clsx
+# Install Vercel CLI
+npm install -g vercel
 
-# Import components
-import { Button, Card, Input } from '@/components/ui';
-
-# Use in your app
-<Button variant="primary">Click me</Button>
+# Deploy
+vercel
 ```
 
-### Documentation
+### Environment Variables
+Set all required environment variables in your deployment platform.
 
-- **[Component README](components/ui/README.md)** - Usage examples and API reference
-- **[Design Guide](DESIGN-GUIDE.md)** - Visual design system and patterns
-- **[Component Summary](UI-COMPONENT-SUMMARY.md)** - Technical overview and architecture
-- **[Examples](examples/component-examples.tsx)** - Interactive usage examples
+### Database (Future)
+Currently uses in-memory/localStorage. For production, integrate:
+- PostgreSQL (via Vercel Postgres or Supabase)
+- MongoDB (via MongoDB Atlas)
+- Firebase Firestore
 
-## 📚 Oros Platform Documentation
+## 📱 PWA Features
 
-The repository contains comprehensive documentation for the Oros Creative Economy platform:
+- Offline support (via Next.js built-in service worker)
+- Installable on mobile devices
+- App manifest configured
+- Theme color and icons defined
 
-- **Executive Summary** - Platform overview and business model
-- **Product Requirements** - Detailed feature specifications
-- **Database Schema** - Complete data architecture
-- **Technical Stack** - Technology choices and architecture
-- **Launch Roadmap** - Implementation timeline
+## 🛣️ Roadmap
 
-See [DJ-JAYTEK-MUSIC-README.md](DJ-JAYTEK-MUSIC-README.md) for the full DJ-Jaytek-Music platform architecture.
-
-## 🛠️ Technology Stack
-
-### UI Components
-- **React 18** - Latest React with concurrent rendering
-- **TypeScript 5** - Full type safety
-- **Next.js 14** - App Router support
-- **Tailwind CSS 3** - Utility-first styling
-- **class-variance-authority** - Type-safe variant management
-
-### Oros Platform
-- **Next.js 14** - React framework with App Router
-- **Supabase** - Backend-as-a-Service (PostgreSQL + Auth + Storage)
-- **Stripe** - Payments and Connect for creator payouts
-- **Vercel** - Hosting and edge functions
-
-## 🎯 Key Highlights
-
-### Components Built From Scratch
-
-Since the oros-core repository contains only documentation, the UI components were created from scratch based on:
-- Design specifications from DJ-Jaytek-Music README
-- Industry best practices for accessibility
-- Modern React patterns and TypeScript
-- Tailwind CSS utility-first approach
-
-### Production Ready
-
-✅ TypeScript compilation: **0 errors**  
-✅ Total lines of code: **1,081**  
-✅ Accessibility: **WCAG 2.1 AA compliant**  
-✅ Browser support: **Chrome 90+, Firefox 88+, Safari 14+**  
-
-## 📖 Usage Examples
-
-### Button Example
-
-```tsx
-import { Button } from '@/components/ui/button';
-
-export default function Example() {
-  return (
-    <>
-      <Button variant="primary">Primary Action</Button>
-      <Button variant="secondary" isLoading>Loading...</Button>
-      <Button variant="success" leftIcon={<Icon />}>With Icon</Button>
-    </>
-  );
-}
-```
-
-### Card Example
-
-```tsx
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-
-export default function Example() {
-  return (
-    <Card variant="glass" padding="lg">
-      <CardHeader>
-        <CardTitle>Glassmorphism Card</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p>Beautiful cyber-aesthetic design</p>
-      </CardContent>
-    </Card>
-  );
-}
-```
-
-### Input Example
-
-```tsx
-import { Input } from '@/components/ui/input';
-
-export default function Example() {
-  return (
-    <Input
-      label="Email"
-      type="email"
-      placeholder="you@example.com"
-      error={errors.email}
-      leftIcon={<MailIcon />}
-      required
-    />
-  );
-}
-```
-
-## 🚀 Getting Started
-
-### For UI Components
-
-1. **Install dependencies**:
-   ```bash
-   npm install class-variance-authority clsx
-   ```
-
-2. **Configure Tailwind** - Copy settings from `tailwind.config.ts`
-
-3. **Import components**:
-   ```tsx
-   import { Button, Card, Input } from '@/components/ui';
-   ```
-
-4. **Use in your app** - See examples directory for inspiration
-
-### For Oros Platform
-
-Refer to the comprehensive documentation files for:
-- Architecture and design decisions
-- Database schema and migrations
-- API endpoints and integrations
-- Deployment strategy
+- [ ] Database integration (PostgreSQL/MongoDB)
+- [ ] Real-time notifications
+- [ ] Advanced analytics dashboard
+- [ ] Video upload and hosting
+- [ ] Chat/messaging between creators and businesses
+- [ ] Payment history and invoicing
+- [ ] Multi-language support
+- [ ] Mobile apps (React Native)
 
 ## 📄 License
 
-MIT License - See individual documentation for more details.
+MIT License - feel free to use this project for your own purposes.
 
 ## 🤝 Contributing
 
-This is a documentation and component library repository. For contributions:
-1. Follow existing code style and patterns
-2. Maintain accessibility standards
-3. Include TypeScript types
-4. Update documentation as needed
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📞 Contact
+## 📞 Support
 
-For questions about:
-- **UI Components**: See component documentation
-- **Oros Platform**: Refer to documentation files
-- **DJ-Jaytek-Music**: See DJ-JAYTEK-MUSIC-README.md
+For support, email support@oros.app or open an issue on GitHub.
 
----
-
-**Status**: ✅ UI Components Complete | 📚 Documentation Repository  
-**Last Updated**: January 5, 2026

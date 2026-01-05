@@ -82,11 +82,13 @@ const config: Config = {
       },
       keyframes: {
         glow: {
+          // Using primary-500 (#00a3ff) and secondary-500 (#7b20c8) colors
           '0%': { boxShadow: '0 0 5px #00a3ff, 0 0 10px #00a3ff' },
           '100%': { boxShadow: '0 0 10px #00a3ff, 0 0 20px #00a3ff, 0 0 30px #7b20c8' },
         },
       },
       boxShadow: {
+        // Using primary-500 (#00a3ff) and secondary-500 (#7b20c8) colors
         'neon': '0 0 10px #00a3ff, 0 0 20px #00a3ff',
         'purple': '0 0 10px #7b20c8, 0 0 20px #7b20c8',
         'glow-sm': '0 0 5px rgba(0, 163, 255, 0.5)',

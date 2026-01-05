@@ -81,7 +81,7 @@ export async function PATCH(
     // Check if user owns this course
     const { data: course } = await supabase
       .from('courses')
-      .select('instructor_id')
+      .select('instructor_id, published_at')
       .eq('id', params.id)
       .single();
 
